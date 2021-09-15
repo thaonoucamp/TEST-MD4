@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h1> D E T A I L</h1>
+    <p>
+        <city href="/home">Come back home</city>
+    </p>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Area</th>
+            <th>Population</th>
+            <th>GDP</th>
+            <th>Description</th>
+        </tr>
+            <tr th:object="${obj}">
+                <td th:text="${obj.name}"></td>
+                <td th:text="${obj.country.getName()}"></td>
+                <td th:text="${obj.area}"></td>
+                <td th:text="${obj.population}"></td>
+                <td th:text="${obj.gdp}"></td>
+                <td th:text="${obj.description}"></td>
+            </tr>
+    </table>
+</div>
+</body>
+</html>

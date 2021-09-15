@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h1>H O M E</h1>
+    <p>
+        <city href="/create">Create new customer</city>
+    </p>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Detail</th>
+        </tr>
+        <th:block th:each="obj : ${list}">
+            <tr>
+                <td th:text="${obj.id}"></td>
+                <td th:text="${obj.name}"></td>
+                <td th:text="${obj.country}"></td>
+                <td>
+                    <city th:href="@{/edit/__${obj.id}__}">Edit</city>
+                </td>
+                <td>
+                    <city th:href="@{/delete/__${obj.id}__}">Delete</city>
+                </td>
+                <td>
+                    <city th:href="@{/detail/__${obj.id}__}">Detail</city>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>
